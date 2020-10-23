@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <br>
+    {% if result == 'True' %}
+	<div class="alert alert-danger" role="alert">
+	<h4 class="alert-heading">Menace!!</h4>
+  	<p>Activité botnet est détectée. Des mesures doivent être prises</p>
+	</div>
+	
+    {% else %}
+	<div class="alert alert-success" role="alert">
+	<h4 class="alert-heading">Pas de danger actuellement </h4>
+  	<p>Aucune activité Botnet hautement suspecte est détectée. Le réseau est sûr pour le moment</p>
+	</div>
+	
+    {% endif %}
+	
+
+	<table class="table table-hover">
+	 
+		  <tbody>
+		    <tr class="table-success ">
+		      <th scope="row">Nombre de flux normal :</th>
+		      <td>{{normal}}</td>
+		    </tr>
+		    <tr class="table-danger">
+		      <th scope="row">Nombre de flux suspecté :</th>
+		      <td>{{ddos}}</td>
+		    </tr>
+		    <tr class="table-warning">
+		      <th scope="row">Nombre total du flux :</th>
+		      <td>{{total}}</td>
+		    </tr>
+		    
+		  </tbody>
+	</table>
+	
+	
+{% endblock content %}
